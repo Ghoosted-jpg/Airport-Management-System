@@ -234,6 +234,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Airport Management System Pictures\Admin Dashboard.png" />
+    <Content Include="Airport Management System Pictures\Admin Profile Bar.png" />
+    <Content Include="Airport Management System Pictures\Login.png" />
+    <Content Include="Airport Management System Pictures\Other Employee Dashboard.png" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
