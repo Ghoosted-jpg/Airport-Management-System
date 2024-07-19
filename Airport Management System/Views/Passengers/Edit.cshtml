@@ -22,7 +22,7 @@
                 <br />
                 @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Passenger Name" } })
                     @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -59,7 +59,7 @@
                 <span>House No</span>
                 @*@Html.LabelFor(model => model.H_no, htmlAttributes: new { @class = "control-label col-md-2" })*@
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.H_no, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.H_no, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter House Number" } })
                     @Html.ValidationMessageFor(model => model.H_no, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -68,7 +68,7 @@
                 <br />
                 @Html.LabelFor(model => model.Area, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Area, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Area, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Area Name" } })
                     @Html.ValidationMessageFor(model => model.Area, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -77,7 +77,7 @@
                 <br />
                 @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter City Name" } })
                     @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -86,7 +86,7 @@
                 <br />
                 @Html.LabelFor(model => model.Country, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Country Name" } })
                     @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
                 </div>
             </div>

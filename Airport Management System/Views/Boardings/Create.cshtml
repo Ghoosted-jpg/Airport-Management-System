@@ -19,7 +19,7 @@
                 <br />
                 <span>Boarding ID</span>
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Boarding_ID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Boarding_ID, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Boarding ID" } })
                     @Html.ValidationMessageFor(model => model.Boarding_ID, "", new { @class = "text-danger" })
                 </div>
             </div>

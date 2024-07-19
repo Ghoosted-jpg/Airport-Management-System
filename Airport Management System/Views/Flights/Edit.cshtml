@@ -42,7 +42,7 @@
             <br />
             @Html.LabelFor(model => model.Source, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Source, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Source, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter City Name" } })
                 @Html.ValidationMessageFor(model => model.Source, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -51,7 +51,7 @@
             <br />
             @Html.LabelFor(model => model.Destination, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Destination, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Destination, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter City Name" } })
                 @Html.ValidationMessageFor(model => model.Destination, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -20,7 +20,7 @@ namespace Airport_Management_System.Models
         public string Luggage_Id { get; set; }
         [Required]
         [DataType(DataType.Text)]
-        [Range(0, 50, ErrorMessage = "Weight must be between 0 and 50.")]
+        [Range(0, 50, ErrorMessage = "Weight must be between 0kg to 50kg.")]
         public string Weight { get; set; }
         [Required]
         [DataType(DataType.Text)]
