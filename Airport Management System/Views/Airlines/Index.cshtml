@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Airport_Management_System.Models.Airline>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/index.cshtml";
+}
+@section Main{
+    <h2 class="fw-bold text-gray-800">Airlines Data</h2>
+    <hr />
+    <p class="fw-bold text-gray-800">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr class="fw-bold text-gray-800">
+            <th>
+                <span>Airline Name</span>
+                @*@Html.DisplayNameFor(model => model.Airline_Name)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Since)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Airline_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Since)
+                </td>
+                <td class="fw-bold text-gray-800">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Airline_Name }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Airline_Name }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Airline_Name })
+                </td>
+            </tr>
+        }
+
+    </table>
+    }

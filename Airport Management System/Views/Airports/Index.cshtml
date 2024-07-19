@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Airport_Management_System.Models.Airport>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/index.cshtml";
+}
+@section Main{
+<h2 class="card-label fw-bold text-gray-800">Airports Data</h2>
+    <hr />
+<p class="card-label fw-bold text-gray-800">
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr class="card-label fw-bold text-gray-800">
+        <th>
+            <span>Airport Name</span>
+            @*@Html.DisplayNameFor(model => model.Airport_Name)*@
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Airport_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Size)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Area)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td class="card-label fw-bold text-gray-800">
+                @Html.ActionLink("Edit", "Edit", new { id = item.Airport_Name }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Airport_Name }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Airport_Name })
+            </td>
+        </tr>
+    }
+
+</table>
+    }

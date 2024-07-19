@@ -1,0 +1,45 @@
+﻿@model Airport_Management_System.Models.Airline
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/index.cshtml";
+}
+@section Main{
+    <h2 class="card-label fw-bold text-gray-800">Airline Detail</h2>
+
+    <div>
+        @*<h4 class="card-label fw-bold text-gray-800">Airline</h4>*@
+        <hr />
+        <dl class="dl-horizontal">
+            <dt class="card-label fw-bold text-gray-800">
+                <span>Airline Name</span>
+                @*@Html.DisplayNameFor(model => model.Airline_Name)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Airline_Name)
+            </dd>
+
+            <dt class="card-label fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Country)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Country)
+            </dd>
+
+            <dt class="card-label fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Since)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Since)
+            </dd>
+
+        </dl>
+    </div>
+    <p class="card-label fw-bold text-gray-800">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Airline_Name }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    }

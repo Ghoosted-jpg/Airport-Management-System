@@ -1,0 +1,82 @@
+﻿@model Airport_Management_System.Models.Employee_Passenger
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/other.cshtml";
+}
+@section Main{
+    <h2 class="fw-bold text-dark">Add Employee Serving Passenger</h2>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal fw-bold text-dark">
+            @*<h4>Employee_Passenger</h4>*@
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <br />
+                <span>Passenger CNIC</span>
+                @*@Html.LabelFor(model => model.CNIC, "CNIC", htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.DropDownList("CNIC", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CNIC, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br />
+                <span>Employee ID</span>
+                @*@Html.LabelFor(model => model.Emp_ID, "Emp_ID", htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.DropDownList("Emp_ID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Emp_ID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br />
+                <span>Serving Time</span>
+                @*@Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control", Type = "datetime-local", id = "dateField" } })
+                    @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default fw-bold text-dark" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="fw-bold text-dark">
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            // Get the current date and time in UTC to avoid timezone issues
+            var today = new Date();
+            var utcNow = new Date(today.getTime() - today.getTimezoneOffset() * 60000); // Convert to UTC
+
+            // Format the current date and time to include seconds for accurate comparison
+            var datePart = utcNow.toISOString().split('T')[0];
+            var timePart = utcNow.toISOString().split('T')[1].substring(0, 8);
+
+            // Combine date and time into ISO format with 'T' separator
+            var dateTime = datePart + 'T' + timePart;
+
+            // Set the 'max' attribute for the date input field
+            document.getElementById("dateField").setAttribute('max', dateTime);
+        });
+    </script>
+
+
+}

@@ -1,0 +1,209 @@
+﻿@model Airport_Management_System.Models.Employee
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/index.cshtml";
+}
+@section Main{
+    <h2 class="fw-bold text-gray-800">Add Employee</h2>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal fw-bold text-gray-800">
+            <h4>@*Employee*@</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <br />
+                <span>Employee ID</span>
+                @*@Html.LabelFor(model => model.Emp_ID, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Emp_ID, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Employee ID" } })
+                    @Html.ValidationMessageFor(model => model.Emp_ID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br />
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Employee Name" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br />
+                @Html.LabelFor(model => model.DOB, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control", id = "dateField" } })
+                    @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br />
+                @Html.LabelFor(model => model.Designation, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Designation, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Employee Designation" } })
+                    @Html.ValidationMessageFor(model => model.Designation, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br />
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Employee Password" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br />
+                @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.Gender,
+                        new List<SelectListItem>
+                        {
+                            new SelectListItem { Text = "Male", Value = "Male" },
+                            new SelectListItem { Text = "Female", Value = "Female" },
+                            new SelectListItem { Text = "Other", Value = "Other" }
+                        },
+                        "Select Gender",
+                        new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br />
+                <span>House No</span>
+                @*@Html.LabelFor(model => model.H_no, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.H_no, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter House Number" } })
+                    @Html.ValidationMessageFor(model => model.H_no, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br />
+                @Html.LabelFor(model => model.Area, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Area, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Area Name" } })
+                    @Html.ValidationMessageFor(model => model.Area, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br />
+                @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter City Name" } })
+                    @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br />
+                @Html.LabelFor(model => model.Country, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Country Name" } })
+                    @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br />
+                @Html.LabelFor(model => model.Salary, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Salary, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Employee Salary" } })
+                    @Html.ValidationMessageFor(model => model.Salary, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br />
+                <span>Phone No</span>
+                @*@Html.LabelFor(model => model.Phone_No, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Phone_No, new { htmlAttributes = new { @class = "form-control", @id = "PhoneNumber", placeholder = "Enter Phone Number" } })
+                    @Html.ValidationMessageFor(model => model.Phone_No, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br />
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Email Address" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br />
+                <span>Airport Name</span>
+                @*@Html.LabelFor(model => model.Airport_Name, "Airport_Name", htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.DropDownList("Airport_Name", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Airport_Name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default fw-bold text-gray-800" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="fw-bold text-gray-800">
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/bundles/jquery")
+        <script>
+            $(document).ready(function () {
+                $('#PhoneNumber').on('input', function () {
+                    let value = $(this).val().replace(/\D/g, ''); // Remove all non-digit characters
+
+                    if (value.length > 10) {
+                        value = value.substring(0, 12); // Limit to 10 digits
+                    }
+
+                    let formatted = '+92';
+                    if (value.length > 2) {
+                        formatted += '-' + value.substring(2, 5);
+                    }
+                    if (value.length > 5) {
+                        formatted += '-' + value.substring(5);
+                    }
+
+                    $(this).val(formatted);
+                });
+
+                // Initial formatting when page loads
+                let initialInput = $('#PhoneNumber').val().replace(/\D/g, ''); // Remove all non-digit characters
+                let formatted = '+92';
+                if (initialInput.length > 2) {
+                    formatted += '-' + initialInput.substring(2, 5);
+                }
+                if (initialInput.length > 5) {
+                    formatted += '-' + initialInput.substring(5);
+                }
+                $('#PhoneNumber').val(formatted);
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                var today = new Date().toISOString().split('T')[0];
+                document.getElementById("dateField").setAttribute('max', today);
+            });</script>
+    }

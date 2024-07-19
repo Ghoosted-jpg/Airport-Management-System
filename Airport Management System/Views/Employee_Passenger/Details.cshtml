@@ -1,0 +1,47 @@
+﻿@model Airport_Management_System.Models.Employee_Passenger
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/other.cshtml";
+}
+@section Main{
+    <h2 class="fw-bold text-dark">Detail of Passenger @Html.DisplayFor(model => model.CNIC) served by Employee @Html.DisplayFor(model => model.Emp_ID)</h2>
+
+    <div>
+        @*<h4>Employee_Passenger</h4>*@
+        <hr />
+        <dl class="dl-horizontal">
+            <dt class="fw-bold text-dark">
+                <span>Serving Time</span>
+                @*@Html.DisplayNameFor(model => model.Date)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Date)
+            </dd>
+
+            <dt class="fw-bold text-dark">
+                <span>Employee ID</span>
+                @*@Html.DisplayNameFor(model => model.Employee.Emp_ID)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Employee.Emp_ID)
+            </dd>
+
+            <dt class="fw-bold text-dark">
+                <span>Passenger CNIC</span>
+                @*@Html.DisplayNameFor(model => model.Passenger.CNIC)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Passenger.CNIC)
+            </dd>
+
+        </dl>
+    </div>
+    <p class="fw-bold text-dark">
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    }

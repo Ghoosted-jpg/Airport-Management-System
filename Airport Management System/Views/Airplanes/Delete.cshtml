@@ -1,0 +1,63 @@
+﻿@model Airport_Management_System.Models.Airplane
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/index.cshtml";
+}
+@section Main{
+    <h2 class="fw-bold text-gray-800">Delete</h2>
+
+    <h3 class="fw-bold text-gray-800">Are you sure you want to delete this Airplane?</h3>
+    <div>
+        @*<h4>Airplane</h4>*@
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                <span class="fw-bold text-gray-800">Model No</span>
+                @*@Html.DisplayNameFor(model => model.Capacity)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Model_No)
+            </dd>
+
+            <dt>
+                <span class="fw-bold text-gray-800">Passenger Capacity</span>
+                @*@Html.DisplayNameFor(model => model.Capacity)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Capacity)
+            </dd>
+
+            <dt>
+                <span class="fw-bold text-gray-800">Fuel Capacity</span>
+                @*@Html.DisplayNameFor(model => model.Fuel_Capacity)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Fuel_Capacity)
+            </dd>
+
+            <dt>
+                <span class="fw-bold text-gray-800">Airline Name</span>
+                @*@Html.DisplayNameFor(model => model.Airline.Airline_Name)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Airline.Airline_Name)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color fw-bold text-gray-800">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+    }

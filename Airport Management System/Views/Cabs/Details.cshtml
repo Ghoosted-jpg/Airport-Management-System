@@ -1,0 +1,54 @@
+﻿@model Airport_Management_System.Models.Cab
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/index.cshtml";
+}
+@section Main{
+    <h2 class="form-horizontal fw-bold text-gray-800">Detail of Cab @Html.DisplayFor(model =>model.Cab_ID)</h2>
+
+    <div>
+        @*<h4>Cab</h4>*@
+        <hr />
+        <dl class="dl-horizontal">
+            <dt class="form-horizontal fw-bold text-gray-800">
+                <span>Cab ID</span>
+                @*@Html.DisplayNameFor(model => model.Cab_ID)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cab_ID)
+            </dd>
+
+            <dt class="form-horizontal fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Model)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Model)
+            </dd>
+
+            <dt class="form-horizontal fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Company)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Company)
+            </dd>
+
+            <dt class="form-horizontal fw-bold text-gray-800">
+                <span>Airport Name</span>
+                @*@Html.DisplayNameFor(model => model.Airport.Airport_Name)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Airport.Airport_Name)
+            </dd>
+
+        </dl>
+    </div>
+    <p class="form-horizontal fw-bold text-gray-800">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Cab_ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

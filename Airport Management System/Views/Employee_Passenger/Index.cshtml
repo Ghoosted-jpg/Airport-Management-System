@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Airport_Management_System.Models.Employee_Passenger>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/other.cshtml";
+}
+@section Main{
+    <h2 class="fw-bold text-dark">Passenger being served by Employee Data</h2>
+    <hr />
+    <p class="fw-bold text-dark">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr class="fw-bold text-dark">
+            <th>
+                <span>Serving Time</span>
+                @*@Html.DisplayNameFor(model => model.Date)*@
+            </th>
+            <th>
+                <span>Employee ID</span>
+                @*@Html.DisplayNameFor(model => model.Employee.Emp_ID)*@
+            </th>
+            <th>
+                <span>Passenger CNIC</span>
+                @*@Html.DisplayNameFor(model => model.Passenger.CNIC)*@
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee.Emp_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Passenger.CNIC)
+                </td>
+                <td class="fw-bold text-dark">
+                    @Html.ActionLink("Edit", "Edit", new { passenger = item.CNIC, employee = item.Emp_ID }) |
+                    @Html.ActionLink("Details", "Details", new { passenger = item.CNIC, employee = item.Emp_ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { passenger = item.CNIC, employee = item.Emp_ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+}

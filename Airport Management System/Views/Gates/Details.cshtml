@@ -1,0 +1,46 @@
+﻿@model Airport_Management_System.Models.Gate
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/index.cshtml";
+}
+@section Main{
+    <h2>@Html.DisplayFor(model => model.Airport_Name)'s Gate No @Html.DisplayFor(model => model.Gate_No) Detail</h2>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt class="fw-bold text-gray-800">
+                <span>Gate No</span>
+                @*@Html.DisplayNameFor(model => model.Terminal_No)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Gate_No)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                <span>Terminal No</span>
+                @*@Html.DisplayNameFor(model => model.Terminal_No)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Terminal_No)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                <span>Airport Name</span>
+                @*@Html.DisplayNameFor(model => model.Airport.Airport_Name)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Airport.Airport_Name)
+            </dd>
+
+        </dl>
+    </div>
+    <p class="fw-bold text-gray-800">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Gate_No }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    }

@@ -1,0 +1,55 @@
+﻿@model Airport_Management_System.Models.Luggage
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/other.cshtml";
+}
+@section Main{
+    <h2 class="fw-bold text-gray-800">Detail of Luggage @Html.DisplayFor(model => model.Luggage_Id)</h2>
+
+    <div>
+        @*<h4>Luggage</h4>*@
+        <hr />
+        <dl class="dl-horizontal">
+            <dt class="fw-bold text-gray-800">
+                <span>Luggage ID</span>
+                @*@Html.DisplayNameFor(model => model.Luggage_Id)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Luggage_Id)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Weight)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Weight)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                <span>Flight ID</span>
+                @*@Html.DisplayNameFor(model => model.Flight.Departure)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Flight.Flight_ID)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                <span>CNIC</span>
+                @*@Html.DisplayNameFor(model => model.Passenger.Name)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Passenger.CNIC)
+            </dd>
+
+        </dl>
+    </div>
+    <p class="fw-bold text-gray-800">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Luggage_Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    }

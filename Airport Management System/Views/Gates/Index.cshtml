@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Airport_Management_System.Models.Gate>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/index.cshtml";
+}
+@section Main{
+    <h2>Gates Data</h2>
+    <hr />
+    <p class="fw-bold text-gray-800">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr class="fw-bold text-gray-800">
+            <th>
+                <span>Gate No</span>
+                @*@Html.DisplayNameFor(model => model.Terminal_No)*@
+            </th>
+            <th>
+                <span>Terminal No</span>
+                @*@Html.DisplayNameFor(model => model.Terminal_No)*@
+            </th>
+            <th>
+                <span>Airport Name</span>
+                @*@Html.DisplayNameFor(model => model.Airport.Airport_Name)*@
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gate_No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Terminal_No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Airport.Airport_Name)
+                </td>
+                <td class="fw-bold text-gray-800">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Gate_No }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Gate_No }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Gate_No })
+                </td>
+            </tr>
+        }
+
+    </table>
+}

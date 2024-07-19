@@ -1,0 +1,54 @@
+﻿@model Airport_Management_System.Models.Airport_Airline
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/index.cshtml";
+}
+@section Main{
+    <h2 class="fw-bold text-gray-800">Delete</h2>
+
+    <h3 class="fw-bold text-gray-800">Are you sure you want to delete @Html.DisplayFor(model => model.Airline_Name) from the @Html.DisplayFor(model => model.Airport_Name)?</h3>
+    <div>
+        @*<h4 class="fw-bold text-gray-800">Airline From Airport</h4>*@
+        <hr />
+        <dl class="dl-horizontal">
+            <dt class="fw-bold text-gray-800">
+                <span>Joining Date</span>
+                @*@Html.DisplayNameFor(model => model.Date)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Date)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                <span>Airline Name</span>
+                @*@Html.DisplayNameFor(model => model.Airline.Airline_Name)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Airline.Airline_Name)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                <span>Airline Name</span>
+                @*@Html.DisplayNameFor(model => model.Airport.Airport_Name)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Airport.Airport_Name)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color fw-bold text-gray-800">
+                <input type="submit" value="Delete" class="btn btn-default " /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+    }

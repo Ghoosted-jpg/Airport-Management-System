@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Airport_Management_System.Models.Airport_Airline>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/index.cshtml";
+}
+@section Main{
+    <h2 class="fw-bold text-gray-800">Airlines In Airports Data</h2>
+    <hr />
+    <p class="fw-bold text-gray-800">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table>
+        <tr class="table fw-bold text-gray-800">
+            <th>
+                <p>Joining Date</p>
+                @*@Html.DisplayNameFor(model => model.Date)*@
+            </th>
+            <th>
+                <p>Airline Name</p>
+                @*@Html.DisplayNameFor(model => model.Airline.Airline_Name)*@
+            </th>
+            <th>
+                <p>Airport Name</p>
+                @*@Html.DisplayNameFor(model => model.Airport.Airport_Name)*@
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Airline.Airline_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Airport.Airport_Name)
+                </td>
+                <td class="fw-bold text-gray-800">
+                    @Html.ActionLink("Edit", "Edit", new { airportName = item.Airport_Name, airlineName = item.Airline_Name }) |
+                    @Html.ActionLink("Details", "Details", new { airportName = item.Airport_Name, airlineName = item.Airline_Name }) |
+                    @Html.ActionLink("Delete", "Delete", new { airportName = item.Airport_Name, airlineName = item.Airline_Name })
+                </td>
+            </tr>
+        }
+
+    </table>
+    }

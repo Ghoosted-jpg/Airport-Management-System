@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Airport_Management_System.Models.Luggage>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/other.cshtml";
+}
+@section Main{
+    <h2 class="fw-bold text-gray-800">Luggage Data</h2>
+    <hr />
+    <p class="fw-bold text-gray-800">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr class="fw-bold text-gray-800">
+            <th>
+                <span>Luggage ID</span>
+                @*@Html.DisplayNameFor(model => model.Weight)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight.Flight_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Passenger.CNIC)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Luggage_Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Weight)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Flight.Flight_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Passenger.CNIC)
+                </td>
+                <td class="fw-bold text-gray-800">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Luggage_Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Luggage_Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Luggage_Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+}

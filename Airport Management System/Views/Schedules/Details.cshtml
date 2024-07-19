@@ -1,0 +1,37 @@
+﻿@model Airport_Management_System.Models.Schedule
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/other.cshtml";
+}
+@section Main{
+    <h2 class="form-horizontal fw-bold text-gray-800">Detail of Schedule @Html.DisplayFor(model => model.Schedule_No)</h2>
+
+    <div>
+        @*<h4>Schedule</h4>*@
+        <hr />
+        <dl class="dl-horizontal">
+            <dt class="form-horizontal fw-bold text-gray-800">
+                <span>Schedule No</span>
+                @*@Html.DisplayNameFor(model => model.Schedule_No)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Schedule_No)
+            </dd>
+            <dt class="form-horizontal fw-bold text-gray-800">
+                <span>Airport Name</span>
+                @*@Html.DisplayNameFor(model => model.Airport.Size)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Airport.Size)
+            </dd>
+
+        </dl>
+    </div>
+    <p class="form-horizontal fw-bold text-gray-800">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Schedule_No }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    }

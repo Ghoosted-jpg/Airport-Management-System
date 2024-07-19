@@ -1,0 +1,46 @@
+﻿@model Airport_Management_System.Models.Ticket
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/other.cshtml";
+}
+@section Main{
+    <h2 class="fw-bold text-gray-800">Detail of Ticket @Html.DisplayFor(model => model.Ticket_No)</h2>
+
+    <div>
+        @*<h4>Ticket</h4>*@
+        <hr />
+        <dl class="dl-horizontal">
+            <dt class="fw-bold text-gray-800">
+                <span>Ticket No</span>
+                @Html.DisplayNameFor(model => model.Flight.Departure)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Ticket_No)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                <span>Flight ID</span>
+                @Html.DisplayNameFor(model => model.Flight.Departure)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Flight.Flight_ID)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Passenger.CNIC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Passenger.CNIC)
+            </dd>
+
+        </dl>
+    </div>
+    <p class="fw-bold text-gray-800">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Ticket_No }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    }

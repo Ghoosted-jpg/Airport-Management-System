@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Airport_Management_System.Models.Flight>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/other.cshtml";
+}
+@section Main{
+    <h2 class="fw-bold text-gray-800">Flights Data</h2>
+    <hr />
+    <p class="fw-bold text-gray-800">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr class="fw-bold text-gray-800">
+            <th>
+                <span>Flight ID</span>
+                @*@Html.DisplayNameFor(model => model.Departure)*@
+            </th>
+            <th>
+                <span>Departure Time</span>
+                @*@Html.DisplayNameFor(model => model.Departure)*@
+            </th>
+            <th>
+                <span>Arrival Time</span>
+                @*@Html.DisplayNameFor(model => model.Arrival)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Source)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination)
+            </th>
+            <th>
+                <span>Schedule No</span>
+                @*@Html.DisplayNameFor(model => model.Schedule.Airport_Name)*@
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Flight_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departure)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Arrival)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Source)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Destination)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Schedule.Schedule_No)
+                </td>
+                <td class="fw-bold text-gray-800">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Flight_ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Flight_ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Flight_ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+}

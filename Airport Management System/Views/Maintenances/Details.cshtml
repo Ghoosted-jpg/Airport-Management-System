@@ -1,0 +1,55 @@
+﻿@model Airport_Management_System.Models.Maintenance
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/index.cshtml";
+}
+@section Main{
+    <h2 class="fw-bold text-gray-800">Detail of Maintenance @Html.DisplayFor(model => model.Maintenance_ID)</h2>
+
+    <div>
+        @*<h4>Maintenance</h4>*@
+        <hr />
+        <dl class="dl-horizontal">
+            <dt class="fw-bold text-gray-800">
+                <span>Maintenance ID</span>
+                @*@Html.DisplayNameFor(model => model.Maintenance_ID)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Maintenance_ID)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Date)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                <span>Cost(In $)</span>
+                @*@Html.DisplayNameFor(model => model.Cost)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cost)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                <span>Airport Name</span>
+                @Html.DisplayNameFor(model => model.Airport.Airport_Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Airport.Airport_Name)
+            </dd>
+
+        </dl>
+    </div>
+    <p class="fw-bold text-gray-800">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Maintenance_ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    }

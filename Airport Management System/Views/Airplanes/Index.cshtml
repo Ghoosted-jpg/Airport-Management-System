@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Airport_Management_System.Models.Airplane>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/index.cshtml";
+}
+@section Main{
+    <h2>Airplanes Data</h2>
+    <hr />
+    <p class="fw-bold text-gray-800">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr class="fw-bold text-gray-800">
+            <th>
+                <span>Model No</span>
+                @*@Html.DisplayNameFor(model => model.Model_No)*@
+            </th>
+            <th>
+                <span>Passenger Capacity</span>
+                @*@Html.DisplayNameFor(model => model.Capacity)*@
+            </th>
+            <th>
+                <span>Fuel Capacity</span>
+                @*@Html.DisplayNameFor(model => model.Fuel_Capacity)*@
+            </th>
+            <th>
+                <span>Airline Name</span>
+                @*@Html.DisplayNameFor(model => model.Airline.Airline_Name)*@
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model_No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Capacity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fuel_Capacity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Airline.Airline_Name)
+                </td>
+                <td class="fw-bold text-gray-800">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Model_No }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Model_No }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Model_No })
+                </td>
+            </tr>
+        }
+
+    </table>
+    }

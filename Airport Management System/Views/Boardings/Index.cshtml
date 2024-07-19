@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Airport_Management_System.Models.Boarding>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/other.cshtml";
+}
+@section Main{
+    <h2 class="fw-bold text-gray-800">Boarding Data</h2>
+    <hr />
+    <p class="fw-bold text-gray-800">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr class="fw-bold text-gray-800">
+            <th>
+                <span>Boarding ID</span>
+                @*@Html.DisplayNameFor(model => model.Time)*@
+            </th>
+            <th>
+                <span>Boarding Time</span>
+                @*@Html.DisplayNameFor(model => model.Time)*@
+            </th>
+            <th>
+                <span>Gate No</span>
+                @*@Html.DisplayNameFor(model => model.Gate.Terminal_No)*@
+            </th>
+            <th>
+                <span>Schedule No</span>
+                @*@Html.DisplayNameFor(model => model.Schedule.Airport_Name)*@
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Boarding_ID)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gate.Gate_No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Schedule.Schedule_No)
+                </td>
+                <td class="fw-bold text-gray-800">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Boarding_ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Boarding_ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Boarding_ID })
+                </td>
+            </tr>
+        }
+
+    </table>
+}

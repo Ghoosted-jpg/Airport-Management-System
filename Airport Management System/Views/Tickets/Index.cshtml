@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Airport_Management_System.Models.Ticket>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/other.cshtml";
+}
+@section Main{
+    <h2 class="fw-bold text-gray-800">Tickets Data</h2>
+    <hr />
+    <p class="fw-bold text-gray-800">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr class="fw-bold text-gray-800">
+            <th>
+                <span>Ticket No</span>
+                @*@Html.DisplayNameFor(model => model.Flight.Departure)*@
+            </th>
+            <th>
+                <span>Flight ID</span>
+                @*@Html.DisplayNameFor(model => model.Flight.Departure)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Passenger.CNIC)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ticket_No)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Flight.Flight_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Passenger.CNIC)
+                </td>
+                <td class="fw-bold text-gray-800">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Ticket_No }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Ticket_No }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Ticket_No })
+                </td>
+            </tr>
+        }
+
+    </table>
+}

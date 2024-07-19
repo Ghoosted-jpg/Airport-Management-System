@@ -1,0 +1,54 @@
+﻿@model Airport_Management_System.Models.Ticket
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/other.cshtml";
+}
+@section Main{
+    <h2 class="fw-bold text-gray-800">Editing Ticket @Html.DisplayFor(model => model.Ticket_No)</h2>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal fw-bold text-gray-800">
+            @*<h4>Ticket</h4>*@
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Ticket_No)
+
+            <div class="form-group">
+                <br />
+                @Html.LabelFor(model => model.CNIC, "CNIC", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("CNIC", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CNIC, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br />
+                <span>Flight ID</span>
+                @*@Html.LabelFor(model => model.Flight_ID, "Flight_ID", htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.DropDownList("Flight_ID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Flight_ID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default fw-bold text-gray-800" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="fw-bold text-gray-800">
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+    }
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

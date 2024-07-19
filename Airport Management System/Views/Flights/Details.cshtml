@@ -1,0 +1,72 @@
+﻿@model Airport_Management_System.Models.Flight
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/other.cshtml";
+}
+@section Main{
+<h2 class="fw-bold text-gray-800">Detail of Flight @Html.DisplayFor(model => model.Flight_ID)</h2>
+
+<div>
+    @*<h4>Flight</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt class="fw-bold text-gray-800">
+            <span>Flight ID</span>
+            @*@Html.DisplayNameFor(model => model.Departure)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flight_ID)
+        </dd>
+
+        <dt class="fw-bold text-gray-800">
+            <span>Departure Time</span>
+            @*@Html.DisplayNameFor(model => model.Departure)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departure)
+        </dd>
+
+        <dt class="fw-bold text-gray-800">
+            <span>Arrival Time</span>
+            @*@Html.DisplayNameFor(model => model.Arrival)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Arrival)
+        </dd>
+
+        <dt class="fw-bold text-gray-800">
+            @Html.DisplayNameFor(model => model.Source)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Source)
+        </dd>
+
+        <dt class="fw-bold text-gray-800">
+            @Html.DisplayNameFor(model => model.Destination)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Destination)
+        </dd>
+
+        <dt class="fw-bold text-gray-800">
+            <span>Schedule No</span>
+            @*@Html.DisplayNameFor(model => model.Schedule.Airport_Name)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Schedule.Schedule_No)
+        </dd>
+
+    </dl>
+</div>
+<p class="fw-bold text-gray-800">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Flight_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+}

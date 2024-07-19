@@ -1,0 +1,94 @@
+﻿@model Airport_Management_System.Models.Passenger
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/other.cshtml";
+}
+@section Main{
+    <h2 class="fw-bold text-gray-800">Detail of Passenger @Html.DisplayFor(model => model.Name)</h2>
+
+    <div>
+        @*<h4>Passenger</h4>*@
+        <hr />
+        <dl class="dl-horizontal">
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.CNIC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CNIC)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.DOB)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DOB)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                <span>House No</span>
+                @*@Html.DisplayNameFor(model => model.H_no)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.H_no)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Area)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Area)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.City)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.City)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Country)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Country)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                <span>Fligth ID</span>
+                @*@Html.DisplayNameFor(model => model.Flight.Departure)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Flight.Flight_ID)
+            </dd>
+
+        </dl>
+    </div>
+    <p class="fw-bold text-gray-800">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CNIC }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    }

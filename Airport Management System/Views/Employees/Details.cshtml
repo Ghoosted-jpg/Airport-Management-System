@@ -1,0 +1,144 @@
+﻿@model Airport_Management_System.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+    if (User.IsInRole("Admin"))
+    {
+        Layout = "~/Views/Shared/index.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/other.cshtml";
+    }
+
+}
+@section Main{
+    <h2 class="fw-bold text-gray-800">Detail of Employee @Html.DisplayFor(model => model.Emp_ID)</h2>
+
+    <div>
+        @*<h4>Employee</h4>*@
+        <hr />
+        <dl class="dl-horizontal">
+            <dt class="fw-bold text-gray-800">
+                <span>Employee ID</span>
+                @*@Html.DisplayNameFor(model => model.Name)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Emp_ID)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.DOB)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DOB)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Designation)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Designation)
+            </dd>
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                <span>House No</span>
+                @*@Html.DisplayNameFor(model => model.H_no)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.H_no)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Area)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Area)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.City)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.City)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Country)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Country)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Salary)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Salary)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                <span>Phone No</span>
+                @*@Html.DisplayNameFor(model => model.Phone_No)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Phone_No)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt class="fw-bold text-gray-800">
+                <span>Airport Name</span>
+                @*@Html.DisplayNameFor(model => model.Airport.Size)*@
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Airport.Airport_Name)
+            </dd>
+
+        </dl>
+    </div>
+    <p class="fw-bold text-gray-800">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Emp_ID })
+        @if (User.IsInRole("Admin")) // Change "Admin" to the appropriate role
+        {
+            <span> | </span> @Html.ActionLink("Back to List", "Index")
+        }
+        @if (User.IsInRole("Admin") == false)
+        {
+          
+            <span> | </span>@Html.ActionLink("Back", "Index", "Passengers")
+            
+        }
+    </p>
+    }

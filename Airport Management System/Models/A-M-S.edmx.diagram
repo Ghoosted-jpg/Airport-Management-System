@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="df3e23e70f4f436c857e44187fa18338" Name="Diagram1">
+        <EntityTypeShape EntityType="AMSModel2.Airline" Width="1.5" PointX="3.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AMSModel2.Airplane" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AMSModel2.Airport" Width="1.5" PointX="0.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AMSModel2.Airport_Airline" Width="1.5" PointX="6" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AMSModel2.Boarding" Width="1.5" PointX="5.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AMSModel2.Cab" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AMSModel2.Employee_Passenger" Width="1.5" PointX="9.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AMSModel2.Employee" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AMSModel2.Flight" Width="1.5" PointX="5.25" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AMSModel2.Gate" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AMSModel2.Luggage" Width="1.5" PointX="9.75" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AMSModel2.Maintenance" Width="1.5" PointX="3" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AMSModel2.Passenger" Width="1.5" PointX="7.5" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AMSModel2.Schedule" Width="1.5" PointX="3" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AMSModel2.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AMSModel2.Ticket" Width="1.5" PointX="9.75" PointY="26" IsExpanded="true" />
+        <AssociationConnector Association="AMSModel2.FK_Airplanes_Airline" ManuallyRouted="false" />
+        <AssociationConnector Association="AMSModel2.FK_Airport_Airline_Airline" ManuallyRouted="false" />
+        <AssociationConnector Association="AMSModel2.FK_Airport_Airline_Airport" ManuallyRouted="false" />
+        <AssociationConnector Association="AMSModel2.FK_Cabs_Airport" ManuallyRouted="false" />
+        <AssociationConnector Association="AMSModel2.FK_Employees_Airport" ManuallyRouted="false" />
+        <AssociationConnector Association="AMSModel2.FK_Gates_Airport" ManuallyRouted="false" />
+        <AssociationConnector Association="AMSModel2.FK_Maintenance_Airport" ManuallyRouted="false" />
+        <AssociationConnector Association="AMSModel2.FK_Schedule_Airport" ManuallyRouted="false" />
+        <AssociationConnector Association="AMSModel2.FK_Boarding_Gates" ManuallyRouted="false" />
+        <AssociationConnector Association="AMSModel2.FK_Boarding_Schedule" ManuallyRouted="false" />
+        <AssociationConnector Association="AMSModel2.FK_Employee_Passenger_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="AMSModel2.FK_Employee_Passenger_Passengers" ManuallyRouted="false" />
+        <AssociationConnector Association="AMSModel2.FK_Flights_Schedule" ManuallyRouted="false" />
+        <AssociationConnector Association="AMSModel2.FK_Luggage_Flights" ManuallyRouted="false" />
+        <AssociationConnector Association="AMSModel2.FK_Passengers_Flights" ManuallyRouted="false" />
+        <AssociationConnector Association="AMSModel2.FK_Tickets_Flights" ManuallyRouted="false" />
+        <AssociationConnector Association="AMSModel2.FK_Luggage_Passengers" ManuallyRouted="false" />
+        <AssociationConnector Association="AMSModel2.FK_Tickets_Passengers" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

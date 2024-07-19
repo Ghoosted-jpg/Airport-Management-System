@@ -1,0 +1,71 @@
+﻿@model Airport_Management_System.Models.Airport
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/index.cshtml";
+}
+@section Main{
+<h2 class="card-label fw-bold text-gray-800">Editing @Html.DisplayFor(model => model.Airport_Name)</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal card-label fw-bold text-gray-800">
+        @*<h4>Airport</h4>*@
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Airport_Name)
+
+        <div class="form-group ">
+            <br />
+            @Html.LabelFor(model => model.Size, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Size, new { htmlAttributes = new { @class = "form-control", placeholder="Enter Airport Size" } })
+                @Html.ValidationMessageFor(model => model.Size, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <br />
+            @Html.LabelFor(model => model.Area, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Area, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Area Name" } })
+                @Html.ValidationMessageFor(model => model.Area, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <br />
+            @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter City Name" } })
+                @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <br />
+            @Html.LabelFor(model => model.Country, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Country Name" } })
+                @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <div class="col-md-offset-2 col-md-10 ">
+                <input type="submit" value="Save" class="btn btn-default card-label fw-bold text-gray-800" />
+            </div>
+        </div>
+    </div>
+}
+
+<div class="card-label fw-bold text-gray-800">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+    }
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
