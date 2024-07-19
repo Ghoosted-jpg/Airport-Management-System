@@ -383,6 +383,7 @@
     <Content Include="Content\js\scripts.bundle.js" />
     <Content Include="Content\js\widgets.bundle.js" />
     <Content Include="Content\media\AMS %283%29.png" />
+    <Content Include="Content\media\AMS %286%29.png" />
     <Content Include="Content\media\avatars\300-1.jpg" />
     <Content Include="Content\media\avatars\300-10.jpg" />
     <Content Include="Content\media\avatars\300-11.jpg" />

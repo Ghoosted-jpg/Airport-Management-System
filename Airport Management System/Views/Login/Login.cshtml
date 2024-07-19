@@ -14,13 +14,16 @@
 </head>
 <body class="min-h-screen flex items-center justify-center bg-gray-100" style="background-color: #f8f2ec;">
     <div class="bg-white shadow-2xl rounded-lg p-8 max-w-sm w-full">
-        <h2 class="text-3xl font-extrabold text-indigo-600 text-center mb-6">Employee Login</h2>
+        @*<h2 class="text-3xl font-extrabold text-indigo-600 text-center mb-6">Employee Login</h2>*@
+        <img src="~/Content/media/AMS (6).png" style="height:60px; padding-left:53px;" />
+        @*<h2 class="text-3xl font-extrabold text-indigo-600 text-center mb-6">Employee Login</h2>*@
         @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "space-y-6" }))
         {
             @Html.AntiForgeryToken()
             @Html.Hidden("ReturnUrl", ViewBag.ReturnUrl as string)
             <div>
-                @Html.LabelFor(m => m.Emp_ID, new { @class = "block text-sm font-medium text-gray-700" })
+                <span class = "block text-sm font-medium text-gray-700">Employee ID</span>
+                @*@Html.LabelFor(m => m.Emp_ID, new { @class = "block text-sm font-medium text-gray-700" })*@
                 <div class="relative">
                     @Html.TextBoxFor(m => m.Emp_ID, new { @class = "w-full px-4 py-3 mt-1 text-gray-900 bg-gray-100 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 pl-12 transition duration-300 ease-in-out", placeholder = "Enter your Employee ID" })
                     <img aria-hidden="true" alt="id-card" src="https://openui.fly.dev/openui/24x24.svg?text=🆔" class="absolute left-4 top-1/2 transform -translate-y-1/2">
@@ -30,10 +33,10 @@
             <div>
                 @Html.LabelFor(m => m.Password, new { @class = "block text-sm font-medium text-gray-700" })
                 <div class="relative">
-                    @Html.TextBoxFor(m => m.Password, new { @class = "w-full px-4 py-3 mt-1 text-gray-900 bg-gray-100 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 pl-12 transition duration-300 ease-in-out", placeholder = "Enter your password", Type="Password" })
+                    @Html.TextBoxFor(m => m.Password, new { @class = "w-full px-4 py-3 mt-1 text-gray-900 bg-gray-100 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 pl-12 transition duration-300 ease-in-out", placeholder = "Enter your password", Type = "Password" })
                     <img aria-hidden="true" alt="lock" src="https://openui.fly.dev/openui/24x24.svg?text=🔒" class="absolute left-4 top-1/2 transform -translate-y-1/2">
                 </div>
-                </div>
+            </div>
             if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
             {
                 <div class="text-red-600 mt-2 text-sm font-medium">
