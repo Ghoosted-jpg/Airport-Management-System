@@ -2342,6 +2342,7 @@
     <Content Include="Content\plugins\global\fonts\line-awesome\la-solid-900.svg" />
     <Content Include="Content\plugins\global\plugins.bundle.css" />
     <Content Include="Content\plugins\global\plugins.bundle.js" />
+    <Content Include="Datbase Script\AMS.sql" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
