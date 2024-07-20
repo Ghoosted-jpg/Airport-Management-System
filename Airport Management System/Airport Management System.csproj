@@ -2350,6 +2350,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Important.txt" />
     <Content Include="Models\A-M-S.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>A-M-S.edmx</DependentUpon>
