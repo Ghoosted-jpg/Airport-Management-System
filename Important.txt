@@ -1,0 +1,11 @@
+If you encounter Roslyn/csc.exe issue then Just do this Step
+Go to Tools > NuGET Package Manager > Package Manager Console 
+
+In the Console Copy & paste this Command
+
+Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
+
+Now You are Good to go.
+
+Since You don't have any Data in Database Tables so you have to Manually enter the Data.
+Without Manually Entering data you cannot Airport Run the Management System 
